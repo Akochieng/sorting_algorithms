@@ -31,6 +31,4 @@ size_t partition(int *arr, size_t size);
 void quicksort_func(int *array, size_t size, size_t len);
 void quick_func(int *array, size_t size, size_t len);
 
-int *array_head;
-
 #endif
