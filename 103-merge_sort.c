@@ -1,6 +1,11 @@
 #include "sort.h"
-
-
+/**
+  *merge_sort - the merge sort function
+  *@array: the array
+  *@size: the size of the array
+  *
+  *Return: void
+  */
 void merge_sort(int *array, size_t size)
 {
 	size_t l, r, mid;

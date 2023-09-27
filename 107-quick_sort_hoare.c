@@ -14,7 +14,7 @@ void quick_sort_hoare(int *array, size_t size)
 	quick_func(array, size, len);
 }
 /**
-  *quicksort_func - helper function to the quick_sort function
+  *quick_func - helper function to the quick_sort function
   *@array: the array to be sorted
   *@size: the size of the array
   *@len: the length of the array
