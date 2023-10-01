@@ -9,8 +9,9 @@
 void quick_sort(int *array, size_t size)
 {
 	size_t len = size;
+	int **array_head;
 
-	array_head = array;
+	*array_head = array;
 	quicksort_func(array, size, len);
 }
 /**
@@ -21,16 +22,16 @@ void quick_sort(int *array, size_t size)
   *
   *Return: void
   */
-void quicksort_func(int *array, size_t size, size_t len)
+void quicksort_func(int *array, int **array_head, size_t size, size_t len)
 {
 	size_t p;
 
 	if (size < 2)
 		return;
-	print_array(array_head, len);
+	print_array(*array_head, len);
 	p = partition(array, size);
-	quicksort_func(array, p, len);
-	quicksort_func(&array[p + 1], size - p - 1, len);
+	quicksort_func(array, array_head, p, len);
+	quicksort_func(&array[p + 1], array_head, size - p - 1, len);
 }
 /**
   *partition - using the last element as the pivot, it moves
@@ -49,30 +50,4 @@ size_t partition(int *array, size_t size)
 	p = size - 1;
 	lt = -1;
 	rt = 0;
-	while (rt < p)
-	{
-		while (rt < p && array[rt] >= array[p])
-			rt++;
-		if (array[rt] < array[p])
-		{
-			lt++;
-			array[rt] = array[lt] ^ array[rt];
-			array[lt] = array[rt] ^ array[lt];
-			array[rt] = array[rt] ^ array[lt];
-		}
-	}
-	if (rt < p - 1)
-	{
-		lt++;
-		array[p] = array[lt] ^ array[p];
-		array[lt] = array[lt] ^ array[p];
-		array[p] = array[lt] ^ array[p];
-	}
-	else
-	{
-		array[p] = array[rt] ^ array[p];
-		array[rt] = array[rt] ^ array[p];
-		array[p] = array[rt] ^ array[p];
-	}
-	return (lt);
 }

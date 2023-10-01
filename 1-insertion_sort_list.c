@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
 			isolate_node(&cur);
 			insert_node(list, &cur);
 			cur = *list;
-			print_list(cur);
+			print_list(*list);
 		}
 		else
 			cur = cur->next;

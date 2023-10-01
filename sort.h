@@ -28,7 +28,7 @@ void print_list(const listint_t *list);
 int insert_node(listint_t **list, listint_t **node);
 void isolate_node(listint_t **node);
 size_t partition(int *arr, size_t size);
-void quicksort_func(int *array, size_t size, size_t len);
+void quicksort_func(int *array, int **array_head, size_t size, size_t len);
 void quick_func(int *array, size_t size, size_t len);
 
 #endif
